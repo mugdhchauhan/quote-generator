@@ -1,6 +1,10 @@
 import './App.css';
 import React, {useState} from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSquareWhatsapp } from '@fortawesome/free-brands-svg-icons'
+
+
 const App = () => {
   const url = "https://api.quotable.io/random";
   let quoteData = {
@@ -23,6 +27,8 @@ const App = () => {
     alert('copied')
   }
 
+  let quoteFormat = "'" + quote.content + "'" + " - " + quote.author;
+
   return (
     <>
       <h1>Quote Generator React App</h1>
@@ -34,6 +40,14 @@ const App = () => {
           <button onClick={generateQuote}>Generate Another Quote</button>
         </div>
       </div>
+
+      {/* whatsapp */}
+      <button>
+        <a href={`https://api.whatsapp.com/send?text=${quoteFormat}`} target="_blank" rel="noopener noreferrer"> 
+          <FontAwesomeIcon icon={faSquareWhatsapp} size="2x" />
+        </a>
+      </button>
+
     </>
   )
 }

@@ -2,7 +2,7 @@ import './App.css';
 import React, {useState} from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSquareWhatsapp, faSquareXTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faSquareWhatsapp, faSquareXTwitter, faSquareReddit } from '@fortawesome/free-brands-svg-icons'
 
 
 const App = () => {
@@ -52,6 +52,13 @@ const App = () => {
       <button>
         <a class="twitter-share-button" href={`https://twitter.com/intent/tweet?text=${quoteFormat}`} target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faSquareXTwitter} size="2x" />
+        </a>
+      </button>
+
+      {/* reddit */}
+      <button>
+        <a href={`https://www.reddit.com/submit?title=${quoteFormat}`} target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faSquareReddit} size="2x" />
         </a>
       </button>
 
